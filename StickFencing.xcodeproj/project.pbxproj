@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7A14F23A2221B7A90087DD42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A14F2392221B7A90087DD42 /* AppDelegate.swift */; };
+		7A14F23C2221B7A90087DD42 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A14F23B2221B7A90087DD42 /* SplashViewController.swift */; };
+		7A14F23F2221B7A90087DD42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A14F23D2221B7A90087DD42 /* Main.storyboard */; };
+		7A14F2422221B7A90087DD42 /* StickFencing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A14F2402221B7A90087DD42 /* StickFencing.xcdatamodeld */; };
+		7A14F2442221B7AB0087DD42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A14F2432221B7AB0087DD42 /* Assets.xcassets */; };
+		7A14F2472221B7AB0087DD42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A14F2452221B7AB0087DD42 /* LaunchScreen.storyboard */; };
+		7A516DCF2221D60700692FDA /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A516DCE2221D60700692FDA /* OverviewViewController.swift */; };
+		7A516DD12221D68F00692FDA /* SetGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A516DD02221D68F00692FDA /* SetGoalViewController.swift */; };
+		7A516DD32221D6C500692FDA /* GeofenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A516DD22221D6C500692FDA /* GeofenceViewController.swift */; };
+		7A516DD52221D6FA00692FDA /* ConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A516DD42221D6FA00692FDA /* ConsentViewController.swift */; };
+		7A516DD72221D72200692FDA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A516DD62221D72200692FDA /* ProfileViewController.swift */; };
+		7A516DD92221EBCD00692FDA /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A516DD82221EBCD00692FDA /* Profile.swift */; };
+		7A516DE32221F65800692FDA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 7A516DE22221F65800692FDA /* Podfile */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7A14F2362221B7A90087DD42 /* StickFencing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StickFencing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A14F2392221B7A90087DD42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7A14F23B2221B7A90087DD42 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		7A14F23E2221B7A90087DD42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7A14F2412221B7A90087DD42 /* StickFencing.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StickFencing.xcdatamodel; sourceTree = "<group>"; };
+		7A14F2432221B7AB0087DD42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7A14F2462221B7AB0087DD42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7A14F2482221B7AB0087DD42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A516DCE2221D60700692FDA /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
+		7A516DD02221D68F00692FDA /* SetGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGoalViewController.swift; sourceTree = "<group>"; };
+		7A516DD22221D6C500692FDA /* GeofenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceViewController.swift; sourceTree = "<group>"; };
+		7A516DD42221D6FA00692FDA /* ConsentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentViewController.swift; sourceTree = "<group>"; };
+		7A516DD62221D72200692FDA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7A516DD82221EBCD00692FDA /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		7A516DE22221F65800692FDA /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7A14F2332221B7A90087DD42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7A14F22D2221B7A90087DD42 = {
+			isa = PBXGroup;
+			children = (
+				7A516DE22221F65800692FDA /* Podfile */,
+				7A14F2382221B7A90087DD42 /* StickFencing */,
+				7A14F2372221B7A90087DD42 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7A14F2372221B7A90087DD42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7A14F2362221B7A90087DD42 /* StickFencing.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7A14F2382221B7A90087DD42 /* StickFencing */ = {
+			isa = PBXGroup;
+			children = (
+				7A516DCB2221CC5B00692FDA /* Delegates */,
+				7A516DCA2221CC5000692FDA /* Models */,
+				7A516DC92221CC4100692FDA /* UI */,
+				7A14F2432221B7AB0087DD42 /* Assets.xcassets */,
+				7A14F2482221B7AB0087DD42 /* Info.plist */,
+				7A14F2402221B7A90087DD42 /* StickFencing.xcdatamodeld */,
+			);
+			path = StickFencing;
+			sourceTree = "<group>";
+		};
+		7A516DC92221CC4100692FDA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				7A516DCD2221CC7600692FDA /* Controllers */,
+				7A516DCC2221CC6B00692FDA /* Views */,
+				7A14F23D2221B7A90087DD42 /* Main.storyboard */,
+				7A14F2452221B7AB0087DD42 /* LaunchScreen.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		7A516DCA2221CC5000692FDA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7A516DD82221EBCD00692FDA /* Profile.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7A516DCB2221CC5B00692FDA /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				7A14F2392221B7A90087DD42 /* AppDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		7A516DCC2221CC6B00692FDA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7A516DCD2221CC7600692FDA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7A14F23B2221B7A90087DD42 /* SplashViewController.swift */,
+				7A516DCE2221D60700692FDA /* OverviewViewController.swift */,
+				7A516DD02221D68F00692FDA /* SetGoalViewController.swift */,
+				7A516DD22221D6C500692FDA /* GeofenceViewController.swift */,
+				7A516DD42221D6FA00692FDA /* ConsentViewController.swift */,
+				7A516DD62221D72200692FDA /* ProfileViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7A14F2352221B7A90087DD42 /* StickFencing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A14F24B2221B7AB0087DD42 /* Build configuration list for PBXNativeTarget "StickFencing" */;
+			buildPhases = (
+				7A14F2322221B7A90087DD42 /* Sources */,
+				7A14F2332221B7A90087DD42 /* Frameworks */,
+				7A14F2342221B7A90087DD42 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StickFencing;
+			productName = StickFencing;
+			productReference = 7A14F2362221B7A90087DD42 /* StickFencing.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7A14F22E2221B7A90087DD42 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Your Company Name";
+				TargetAttributes = {
+					7A14F2352221B7A90087DD42 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 7A14F2312221B7A90087DD42 /* Build configuration list for PBXProject "StickFencing" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7A14F22D2221B7A90087DD42;
+			productRefGroup = 7A14F2372221B7A90087DD42 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7A14F2352221B7A90087DD42 /* StickFencing */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7A14F2342221B7A90087DD42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A14F2472221B7AB0087DD42 /* LaunchScreen.storyboard in Resources */,
+				7A14F2442221B7AB0087DD42 /* Assets.xcassets in Resources */,
+				7A516DE32221F65800692FDA /* Podfile in Resources */,
+				7A14F23F2221B7A90087DD42 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7A14F2322221B7A90087DD42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A516DD12221D68F00692FDA /* SetGoalViewController.swift in Sources */,
+				7A14F23C2221B7A90087DD42 /* SplashViewController.swift in Sources */,
+				7A516DD52221D6FA00692FDA /* ConsentViewController.swift in Sources */,
+				7A516DD32221D6C500692FDA /* GeofenceViewController.swift in Sources */,
+				7A14F2422221B7A90087DD42 /* StickFencing.xcdatamodeld in Sources */,
+				7A516DCF2221D60700692FDA /* OverviewViewController.swift in Sources */,
+				7A516DD72221D72200692FDA /* ProfileViewController.swift in Sources */,
+				7A516DD92221EBCD00692FDA /* Profile.swift in Sources */,
+				7A14F23A2221B7A90087DD42 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7A14F23D2221B7A90087DD42 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A14F23E2221B7A90087DD42 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7A14F2452221B7AB0087DD42 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A14F2462221B7AB0087DD42 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7A14F2492221B7AB0087DD42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7A14F24A2221B7AB0087DD42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7A14F24C2221B7AB0087DD42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7WSWJ7JKTP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = StickFencing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = Test.StickFencing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7A14F24D2221B7AB0087DD42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7WSWJ7JKTP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = StickFencing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = Test.StickFencing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7A14F2312221B7A90087DD42 /* Build configuration list for PBXProject "StickFencing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A14F2492221B7AB0087DD42 /* Debug */,
+				7A14F24A2221B7AB0087DD42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A14F24B2221B7AB0087DD42 /* Build configuration list for PBXNativeTarget "StickFencing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A14F24C2221B7AB0087DD42 /* Debug */,
+				7A14F24D2221B7AB0087DD42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7A14F2402221B7A90087DD42 /* StickFencing.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7A14F2412221B7A90087DD42 /* StickFencing.xcdatamodel */,
+			);
+			currentVersion = 7A14F2412221B7A90087DD42 /* StickFencing.xcdatamodel */;
+			path = StickFencing.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7A14F22E2221B7A90087DD42 /* Project object */;
+}
