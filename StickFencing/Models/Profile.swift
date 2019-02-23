@@ -9,6 +9,8 @@
 import Foundation
 
 class Profile {
+    let url = URL(string: "http://httpbin.org/post")!
+
     var name:String!
     var email:String!
     var age:String!
@@ -40,6 +42,27 @@ class Profile {
     
     func fromJson(jsonText:String) {
         let jsonData = self.stringToJson(jsonText: jsonText)
-        
+        var request = URLRequest(url: self.url)
+        request.httpMethod = "POST"
+        request.httpBody = jsonData
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                print(responseJSON)
+            }
+        }
+        task.resume()
     }
+
+
+    func saveToCloud() {
+        jsonData = self.toJson()
+
+    }
+    
 }
