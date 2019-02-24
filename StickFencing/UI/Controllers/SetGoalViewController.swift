@@ -9,7 +9,7 @@
 import UIKit
 import FacebookCore
 
-class SetGoalViewController: UIViewController {
+class SetGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource  {
     @IBOutlet weak var numGymVisitsInput: UITextField!
     @IBOutlet weak var numWeekCommitmentInput: UITextField!
     @IBOutlet weak var textMessageInput: UITextView!
@@ -22,15 +22,22 @@ class SetGoalViewController: UIViewController {
     let messageType_text = "text"
     let messageType_facebook = "facebook"
     
-    let gymGeofenceIds  = [
-        ["displayValue":"--Select--" as AnyObject,"id":"" as AnyObject],
-        ["displayValue":"Jame" as AnyObject,"id":"100" as AnyObject],
-        ["displayValue":"Enamul" as AnyObject,"id":"201" as AnyObject]
+    let gymGeofenceNames = [
+        "Equinox": "48fc0182-bf28-40a3-9e4a-150e2d0dca2a",
+        "Mission Cliffs": "f554237d-599a-49b4-9f09-8a7e4b61ba34",
+        "24 Hour Fitness": "4bfa67da-f3bf-47f1-803b-4ca0a7c0c14b"
     ]
+    var gymNamePickerData: [String] = [String]()
     
     override func viewDidLoad() {
         print("SetGoalViewController")
         super.viewDidLoad()
+        
+        for (gymName, _) in self.gymGeofenceNames {
+            self.gymNamePickerData.append(gymName)
+        }
+        self.gymPicker.delegate = self
+        self.gymPicker.dataSource = self
         
         if let accessToken = AccessToken.current {
             // attemp to delete any habits that already exist
@@ -42,9 +49,18 @@ class SetGoalViewController: UIViewController {
             if (habit.length != nil) {
                 self.numWeekCommitmentInput.text = String(habit.length)
             }
+            var selectedRowIndex = 0
             if (habit.geoFenceId != nil) {
-                self.gymPicker.selectRow(row, inComponent: 0, animated: true)
+                var row = 0
+                for (_, geofenceId) in self.gymGeofenceNames {
+                    if habit.geoFenceId == geofenceId {
+                        selectedRowIndex = row
+                        break
+                    }
+                    row = row + 1
+                }
             }
+            self.gymPicker.selectRow(selectedRowIndex, inComponent: 0, animated: false)
             let textMessage = userDefaults.string(forKey: "Test.StickFencing.textMessage") as String?
             if (textMessage != nil) {
                 self.textMessageInput.text = textMessage
@@ -55,18 +71,6 @@ class SetGoalViewController: UIViewController {
             } else if (messageType == self.messageType_facebook) {
                 self.messageTypeToggle.selectedSegmentIndex = 1
             }
-            /*
-            @IBOutlet weak var mPicker: UIPickerView!
-            var items: [String] = ["NoName1","NoName2","NoName3"] // Set through another ViewController
-            var itemAtDefaultPosition: String?  //Set through another ViewController
-            
-            //..
-            //..
-            
-            var defaultRowIndex = find(items,itemAtDefaultPosition!)
-            if(defaultRowIndex == nil) { defaultRowIndex = 0 }
-            mPicker.selectRow(defaultRowIndex!, inComponent: 0, animated: false)
-            */
         } else {
             self.loadSplashScreen()
         }
@@ -99,6 +103,21 @@ class SetGoalViewController: UIViewController {
         } else {
             userDefaults.set(self.messageType_facebook, forKey: "Test.StickFencing.messageType")
         }
+    }
+    
+    // Number of columns of data
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    // The number of rows of data
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.gymNamePickerData.count
+    }
+    
+    // The data to return fopr the row and component (column) that's being passed in
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.gymNamePickerData[row]
     }
 }
 

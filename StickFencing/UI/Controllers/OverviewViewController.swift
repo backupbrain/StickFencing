@@ -27,7 +27,7 @@ class OverviewViewController: UIViewController {
     @IBAction func onNextButtonTouched(_ sender: Any) {
         userDefaults.set(true, forKey: "Test.StickFencing.wasIntroScreenSeen")
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let setGoalViewController = storyBoard.instantiateViewController(withIdentifier: "setGoalViewController") as! SetGoalViewController
+        let setGoalViewController = storyBoard.instantiateViewController(withIdentifier: "SetGoalViewController") as! SetGoalViewController
         self.present(setGoalViewController, animated: true, completion: nil)
     }
     

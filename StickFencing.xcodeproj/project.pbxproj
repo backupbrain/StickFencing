@@ -23,6 +23,7 @@
 		7A4818492222F68C00080823 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4818482222F68C00080823 /* Activity.swift */; };
 		7A48184B2222F75400080823 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A48184A2222F75400080823 /* Progress.swift */; };
 		7A48184D22230F3C00080823 /* ApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A48184C22230F3C00080823 /* ApiHandler.swift */; };
+		7A48184F22231C6300080823 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A48184E22231C6300080823 /* CoreLocation.framework */; };
 		7A516DCF2221D60700692FDA /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A516DCE2221D60700692FDA /* OverviewViewController.swift */; };
 		7A516DD12221D68F00692FDA /* SetGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A516DD02221D68F00692FDA /* SetGoalViewController.swift */; };
 		7A516DD52221D6FA00692FDA /* ConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A516DD42221D6FA00692FDA /* ConsentViewController.swift */; };
@@ -53,6 +54,7 @@
 		7A4818482222F68C00080823 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		7A48184A2222F75400080823 /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		7A48184C22230F3C00080823 /* ApiHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHandler.swift; sourceTree = "<group>"; };
+		7A48184E22231C6300080823 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7A516DCE2221D60700692FDA /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		7A516DD02221D68F00692FDA /* SetGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGoalViewController.swift; sourceTree = "<group>"; };
 		7A516DD42221D6FA00692FDA /* ConsentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A48184F22231C6300080823 /* CoreLocation.framework in Frameworks */,
 				7A48183C2222C11000080823 /* FacebookCore.framework in Frameworks */,
 				7A48183E2222C11000080823 /* FacebookLogin.framework in Frameworks */,
 				7A4818402222C11000080823 /* FBSDKCoreKit.framework in Frameworks */,
@@ -182,6 +185,7 @@
 		8AD454252A32795F1E33094C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A48184E22231C6300080823 /* CoreLocation.framework */,
 				7A48183B2222C11000080823 /* FacebookCore.framework */,
 				7A48183D2222C11000080823 /* FacebookLogin.framework */,
 				7A48183F2222C11000080823 /* FBSDKCoreKit.framework */,

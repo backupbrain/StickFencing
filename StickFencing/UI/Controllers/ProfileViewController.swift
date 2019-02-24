@@ -9,8 +9,9 @@
 import UIKit
 import FacebookCore
 import FacebookLogin
+import CoreLocation
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var numTimesPerWeekLabel: UILabel!
     @IBOutlet weak var numWeeksLabel: UILabel!
     @IBOutlet weak var changeGoalsButton: UIButton!
@@ -22,7 +23,15 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         print("ProfileViewController")
         super.viewDidLoad()
-        // get updates
+        
+        
+        let locationManager = CLLocationManager()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self;
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+        }
         
         if let accessToken = AccessToken.current {
             self.progress = Progress()
@@ -56,6 +65,21 @@ class ProfileViewController: UIViewController {
         let loginManager = LoginManager()
         loginManager.logOut()
         self.loadSplashScreen()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedAlways {
+            // you're good to go!
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        
+        if let location = locations.last {
+            print("New location is \(location)")
+        }
     }
 }
 

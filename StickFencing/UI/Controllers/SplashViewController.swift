@@ -9,8 +9,9 @@
 import UIKit
 import FacebookCore
 import FacebookLogin
+import CoreLocation
 
-class SplashViewController: UIViewController {
+class SplashViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var facebookLoginButton: UIButton!
     @IBOutlet weak var jsonTestButton: UIButton!
     
@@ -19,6 +20,14 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         print("SplashViewController")
         super.viewDidLoad()
+        
+        let locationManager = CLLocationManager()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self;
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+        }
         
         if let accessToken = AccessToken.current {
             print(accessToken)
@@ -43,8 +52,6 @@ class SplashViewController: UIViewController {
     }
         
     @IBAction func onFacebookLaginButtonTouched(_ sender: Any) {
-        print("Facebook button")
-        
         let loginManager = LoginManager()
         loginManager.logIn(readPermissions: [ReadPermission.publicProfile], viewController : self) { loginResult in
             switch loginResult {
@@ -66,5 +73,15 @@ class SplashViewController: UIViewController {
         profile.cloudGet(fbhandle: "bhavya6187")
     }
     
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedAlways {
+            // you're good to go!
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+    }
 }
 
