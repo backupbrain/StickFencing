@@ -33,6 +33,18 @@ class SetGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         print("SetGoalViewController")
         super.viewDidLoad()
         
+        
+        
+        
+        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(SetGoalViewController.dismissKeyboard))
+        
+        self.view.addGestureRecognizer(tapRecognizer)
+        
+        
+        
+        
         for (gymName, _) in self.gymGeofenceNames {
             self.gymNamePickerData.append(gymName)
         }
@@ -136,6 +148,10 @@ class SetGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     // The data to return fopr the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return self.gymNamePickerData[row]
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 

@@ -42,14 +42,7 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         print("ProfileViewController")
         super.viewDidLoad()
-        
-        
-        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(ViewController.dismissKeyboard))
-        
-        self.view.addGestureRecognizer(tapRecognizer)
-        
+    
         
         
         let locationManager = CLLocationManager()
