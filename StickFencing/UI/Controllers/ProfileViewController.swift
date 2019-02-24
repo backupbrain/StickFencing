@@ -11,6 +11,23 @@ import FacebookCore
 import FacebookLogin
 import CoreLocation
 
+
+extension UIViewController {
+    func hideKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(UIViewController.dismissKeyboard))
+        
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+
 class ProfileViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var numTimesPerWeekLabel: UILabel!
     @IBOutlet weak var numWeeksLabel: UILabel!
@@ -24,7 +41,7 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         print("ProfileViewController")
         super.viewDidLoad()
-        
+        self.hideKeyboard()
         
         let locationManager = CLLocationManager()
         if CLLocationManager.locationServicesEnabled() {
@@ -39,9 +56,19 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
             self.progress.cloudGet(fbhandle: accessToken.authenticationToken)
             self.habit = Habit()
             self.habit.cloudGet(fbhandle: accessToken.authenticationToken)
-            frequency = userDefaults.integer(forKey: <#T##String#>)
-            self.numTimesPerWeekLabel.text = String(habit.frequency)
-            self.numWeeksLabel.text = String(habit.length)
+            
+            
+            
+            let numGymVisits = userDefaults.integer(forKey: "Test.StickFencing.numGymVisits")
+            let numWeekCommitment = userDefaults.integer(forKey: "Test.StickFencing.numWeekCommitment")
+            let textMessage = userDefaults.string(forKey: "Test.StickFencing.textMessage")
+            let messageType = userDefaults.string(forKey: "Test.StickFencing.messageType")
+            let gymGeofenceId = userDefaults.string(forKey: "Test.StickFencing.geofenceId")
+            
+            
+            
+            self.numTimesPerWeekLabel.text = String(numGymVisits)
+            self.numWeeksLabel.text = String(numWeekCommitment)
         } else {
             self.loadSplashScreen()
         }
@@ -83,5 +110,6 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
             print("New location is \(location)")
         }
     }
+    
 }
 

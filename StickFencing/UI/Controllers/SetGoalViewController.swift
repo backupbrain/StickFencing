@@ -84,7 +84,25 @@ class SetGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         self.habit.fbhandle = AccessToken.current!.authenticationToken
         self.habit.cloudInsert()
         
+        let numGymVisits = NSInteger(self.numGymVisitsInput.text!)
+        let numWeekCommitment = NSInteger(self.numWeekCommitmentInput.text!)
+        let textMessage = self.textMessageInput.text
+        if self.messageTypeToggle.selectedSegmentIndex == 0 {
+            userDefaults.set(messageType_text, forKey: "Test.StickFencing.numWeekCommitment")
+        } else {
+            userDefaults.set(messageType_facebook, forKey: "Test.StickFencing.numWeekCommitment")
+        }
+        let gymGeofenceId = self.gymGeofenceNames[
+            self.gymNamePickerData[
+                self.gymPicker.selectedRow(inComponent: 0)
+            ]
+        ]
+        userDefaults.set(numGymVisits, forKey: "Test.StickFencing.numGymVisits")
+        userDefaults.set(numWeekCommitment, forKey: "Test.StickFencing.numWeekCommitment")
+        userDefaults.set(textMessage, forKey: "Test.StickFencing.textMessage")
+        userDefaults.set(gymGeofenceId, forKey: "Test.StickFencing.geofenceId")
         userDefaults.set(true, forKey: "Test.StickFencing.wereGoalsSet")
+        
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let profileViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
         self.present(profileViewController, animated: true, completion: nil)
