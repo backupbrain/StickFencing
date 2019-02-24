@@ -24,6 +24,7 @@
 		7A48184B2222F75400080823 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A48184A2222F75400080823 /* Progress.swift */; };
 		7A48184D22230F3C00080823 /* ApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A48184C22230F3C00080823 /* ApiHandler.swift */; };
 		7A48184F22231C6300080823 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A48184E22231C6300080823 /* CoreLocation.framework */; };
+		7A481853222340DE00080823 /* commit_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A481852222340DD00080823 /* commit_icon.png */; };
 		7A516DCF2221D60700692FDA /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A516DCE2221D60700692FDA /* OverviewViewController.swift */; };
 		7A516DD12221D68F00692FDA /* SetGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A516DD02221D68F00692FDA /* SetGoalViewController.swift */; };
 		7A516DD52221D6FA00692FDA /* ConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A516DD42221D6FA00692FDA /* ConsentViewController.swift */; };
@@ -55,6 +56,7 @@
 		7A48184A2222F75400080823 /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		7A48184C22230F3C00080823 /* ApiHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHandler.swift; sourceTree = "<group>"; };
 		7A48184E22231C6300080823 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7A481852222340DD00080823 /* commit_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commit_icon.png; sourceTree = "<group>"; };
 		7A516DCE2221D60700692FDA /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		7A516DD02221D68F00692FDA /* SetGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGoalViewController.swift; sourceTree = "<group>"; };
 		7A516DD42221D6FA00692FDA /* ConsentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		7A4818432222D0DF00080823 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				7A481852222340DD00080823 /* commit_icon.png */,
 				7A4818442222D0F200080823 /* commit_logo.png */,
 			);
 			path = Assets;
@@ -259,6 +262,7 @@
 				7A14F2472221B7AB0087DD42 /* LaunchScreen.storyboard in Resources */,
 				7A14F2442221B7AB0087DD42 /* Assets.xcassets in Resources */,
 				7A516DE32221F65800692FDA /* Podfile in Resources */,
+				7A481853222340DE00080823 /* commit_icon.png in Resources */,
 				7A14F23F2221B7A90087DD42 /* Main.storyboard in Resources */,
 				7A4818452222D0F200080823 /* commit_logo.png in Resources */,
 			);
