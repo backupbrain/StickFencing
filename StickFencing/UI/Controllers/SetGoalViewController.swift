@@ -22,6 +22,12 @@ class SetGoalViewController: UIViewController {
     let messageType_text = "text"
     let messageType_facebook = "facebook"
     
+    let gymGeofenceIds  = [
+        ["displayValue":"--Select--" as AnyObject,"id":"" as AnyObject],
+        ["displayValue":"Jame" as AnyObject,"id":"100" as AnyObject],
+        ["displayValue":"Enamul" as AnyObject,"id":"201" as AnyObject]
+    ]
+    
     override func viewDidLoad() {
         print("SetGoalViewController")
         super.viewDidLoad()
@@ -36,17 +42,31 @@ class SetGoalViewController: UIViewController {
             if (habit.length != nil) {
                 self.numWeekCommitmentInput.text = String(habit.length)
             }
-            let textMessage = userDefaults.string(forKey: "Test.StickFencing.wereGoalsSet") as String?
+            if (habit.geoFenceId != nil) {
+                self.gymPicker.selectRow(row, inComponent: 0, animated: true)
+            }
+            let textMessage = userDefaults.string(forKey: "Test.StickFencing.textMessage") as String?
             if (textMessage != nil) {
                 self.textMessageInput.text = textMessage
             }
-            let messageType = userDefaults.string(forKey: "messageType") as String?
+            let messageType = userDefaults.string(forKey: "Test.StickFencing.messageType") as String?
             if (messageType == self.messageType_text) {
-                //self.textMessageInput.text = textMessage
+                self.messageTypeToggle.selectedSegmentIndex = 0
             } else if (messageType == self.messageType_facebook) {
-                // something
+                self.messageTypeToggle.selectedSegmentIndex = 1
             }
+            /*
+            @IBOutlet weak var mPicker: UIPickerView!
+            var items: [String] = ["NoName1","NoName2","NoName3"] // Set through another ViewController
+            var itemAtDefaultPosition: String?  //Set through another ViewController
             
+            //..
+            //..
+            
+            var defaultRowIndex = find(items,itemAtDefaultPosition!)
+            if(defaultRowIndex == nil) { defaultRowIndex = 0 }
+            mPicker.selectRow(defaultRowIndex!, inComponent: 0, animated: false)
+            */
         } else {
             self.loadSplashScreen()
         }
@@ -71,6 +91,14 @@ class SetGoalViewController: UIViewController {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let splashViewController = storyBoard.instantiateViewController(withIdentifier: "SplashViewController") as! SplashViewController
         self.present(splashViewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func onMessageTypeSegmentChanged(_ sender: Any) {
+        if (self.messageTypeToggle.selectedSegmentIndex == 0) {
+            userDefaults.set(self.messageType_text, forKey: "Test.StickFencing.messageType")
+        } else {
+            userDefaults.set(self.messageType_facebook, forKey: "Test.StickFencing.messageType")
+        }
     }
 }
 
