@@ -36,10 +36,13 @@
                                 <accessibility key="accessibilityConfiguration" identifier="facebookLoginButton"/>
                                 <state key="normal" title="Test JSON PUT"/>
                                 <connections>
-                                    <action selector="onFacebookLaginButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P9d-rD-bRh"/>
                                     <action selector="onJsonTestButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dbG-zP-6Ny"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="commit_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="7jj-0M-13x">
+                                <rect key="frame" x="69" y="74" width="196" height="198"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -50,12 +53,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="210" y="132"/>
+            <point key="canvasLocation" x="210" y="130.98591549295776"/>
         </scene>
-        <!--Overview View Controller-->
+        <!--OverviewViewController-->
         <scene sceneID="2yE-de-pot">
             <objects>
-                <viewController id="cWS-Rj-emw" customClass="OverviewViewController" customModule="StickFencing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="OverviewViewController" storyboardIdentifier="OverviewViewController" id="cWS-Rj-emw" userLabel="OverviewViewController" customClass="OverviewViewController" customModule="StickFencing" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QqL-ma-Cyr"/>
                         <viewControllerLayoutGuide type="bottom" id="7nZ-Ks-nnp"/>
@@ -505,4 +508,7 @@
             <point key="canvasLocation" x="3770.625" y="133.09859154929578"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="commit_logo.png" width="500" height="500"/>
+    </resources>
 </document>

@@ -14,6 +14,12 @@
 		7A14F2422221B7A90087DD42 /* StickFencing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A14F2402221B7A90087DD42 /* StickFencing.xcdatamodeld */; };
 		7A14F2442221B7AB0087DD42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A14F2432221B7AB0087DD42 /* Assets.xcassets */; };
 		7A14F2472221B7AB0087DD42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A14F2452221B7AB0087DD42 /* LaunchScreen.storyboard */; };
+		7A48183A2222C0D600080823 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4818392222C0D600080823 /* Alamofire.framework */; };
+		7A48183C2222C11000080823 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A48183B2222C11000080823 /* FacebookCore.framework */; };
+		7A48183E2222C11000080823 /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A48183D2222C11000080823 /* FacebookLogin.framework */; };
+		7A4818402222C11000080823 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A48183F2222C11000080823 /* FBSDKCoreKit.framework */; };
+		7A4818422222C11000080823 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4818412222C11000080823 /* FBSDKLoginKit.framework */; };
+		7A4818452222D0F200080823 /* commit_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A4818442222D0F200080823 /* commit_logo.png */; };
 		7A516DCF2221D60700692FDA /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A516DCE2221D60700692FDA /* OverviewViewController.swift */; };
 		7A516DD12221D68F00692FDA /* SetGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A516DD02221D68F00692FDA /* SetGoalViewController.swift */; };
 		7A516DD32221D6C500692FDA /* GeofenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A516DD22221D6C500692FDA /* GeofenceViewController.swift */; };
@@ -36,6 +42,12 @@
 		7A14F2432221B7AB0087DD42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A14F2462221B7AB0087DD42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A14F2482221B7AB0087DD42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A4818392222C0D600080823 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A48183B2222C11000080823 /* FacebookCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A48183D2222C11000080823 /* FacebookLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A48183F2222C11000080823 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A4818412222C11000080823 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A4818442222D0F200080823 /* commit_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commit_logo.png; sourceTree = "<group>"; };
 		7A516DCE2221D60700692FDA /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		7A516DD02221D68F00692FDA /* SetGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGoalViewController.swift; sourceTree = "<group>"; };
 		7A516DD22221D6C500692FDA /* GeofenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +63,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A48183C2222C11000080823 /* FacebookCore.framework in Frameworks */,
+				7A48183E2222C11000080823 /* FacebookLogin.framework in Frameworks */,
+				7A4818402222C11000080823 /* FBSDKCoreKit.framework in Frameworks */,
+				7A4818422222C11000080823 /* FBSDKLoginKit.framework in Frameworks */,
+				7A48183A2222C0D600080823 /* Alamofire.framework in Frameworks */,
 				18D155A67C616D62EBB64578 /* Pods_StickFencing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +106,7 @@
 		7A14F2382221B7A90087DD42 /* StickFencing */ = {
 			isa = PBXGroup;
 			children = (
+				7A4818432222D0DF00080823 /* Assets */,
 				7A516DCB2221CC5B00692FDA /* Delegates */,
 				7A516DCA2221CC5000692FDA /* Models */,
 				7A516DC92221CC4100692FDA /* UI */,
@@ -97,6 +115,14 @@
 				7A14F2402221B7A90087DD42 /* StickFencing.xcdatamodeld */,
 			);
 			path = StickFencing;
+			sourceTree = "<group>";
+		};
+		7A4818432222D0DF00080823 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				7A4818442222D0F200080823 /* commit_logo.png */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		7A516DC92221CC4100692FDA /* UI */ = {
@@ -150,6 +176,11 @@
 		8AD454252A32795F1E33094C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A48183B2222C11000080823 /* FacebookCore.framework */,
+				7A48183D2222C11000080823 /* FacebookLogin.framework */,
+				7A48183F2222C11000080823 /* FBSDKCoreKit.framework */,
+				7A4818412222C11000080823 /* FBSDKLoginKit.framework */,
+				7A4818392222C0D600080823 /* Alamofire.framework */,
 				6901E649B4D8B21BDA091B33 /* Pods_StickFencing.framework */,
 			);
 			name = Frameworks;
@@ -219,6 +250,7 @@
 				7A14F2442221B7AB0087DD42 /* Assets.xcassets in Resources */,
 				7A516DE32221F65800692FDA /* Podfile in Resources */,
 				7A14F23F2221B7A90087DD42 /* Main.storyboard in Resources */,
+				7A4818452222D0F200080823 /* commit_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
