@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var changeGoalsButton: UIButton!
     @IBOutlet weak var logOutButton: UIButton!
     
+    let userDefaults:UserDefaults = UserDefaults.standard
     var habit:Habit!
     var progress:Progress!
     
@@ -38,6 +39,7 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
             self.progress.cloudGet(fbhandle: accessToken.authenticationToken)
             self.habit = Habit()
             self.habit.cloudGet(fbhandle: accessToken.authenticationToken)
+            frequency = userDefaults.integer(forKey: <#T##String#>)
             self.numTimesPerWeekLabel.text = String(habit.frequency)
             self.numWeeksLabel.text = String(habit.length)
         } else {
