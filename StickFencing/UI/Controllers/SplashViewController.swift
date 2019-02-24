@@ -14,6 +14,8 @@ class SplashViewController: UIViewController {
     @IBOutlet weak var facebookLoginButton: UIButton!
     @IBOutlet weak var jsonTestButton: UIButton!
     
+    let userDefaults:UserDefaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         print("SplashViewController")
         super.viewDidLoad()
@@ -26,8 +28,18 @@ class SplashViewController: UIViewController {
     
     func loadNextScreen() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let overviewViewController = storyBoard.instantiateViewController(withIdentifier: "OverviewViewController") as! OverviewViewController
-        self.present(overviewViewController, animated: true, completion: nil)
+        if (userDefaults.bool(forKey: "Test.StickFencing.wasIntroScreenSeen") == true) {
+            if (userDefaults.bool(forKey: "Test.StickFencing.wereGoalsSet") == true) {
+                let profileViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+                self.present(profileViewController, animated: true, completion: nil)
+            } else {
+                let setGoalViewController = storyBoard.instantiateViewController(withIdentifier: "SetGoalViewController") as! SetGoalViewController
+                self.present(setGoalViewController, animated: true, completion: nil)
+            }
+        } else {
+            let overviewViewController = storyBoard.instantiateViewController(withIdentifier: "OverviewViewController") as! OverviewViewController
+            self.present(overviewViewController, animated: true, completion: nil)
+        }
     }
         
     @IBAction func onFacebookLaginButtonTouched(_ sender: Any) {

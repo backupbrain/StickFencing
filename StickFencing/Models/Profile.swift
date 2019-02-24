@@ -10,20 +10,21 @@ import Foundation
 import Alamofire
 
 class Profile {
-    let url = URL(string: "http://stick.mizcmyrprw.us-west-2.elasticbeanstalk.com/login/")!
+    //let url = URL(string: "http://stick.mizcmyrprw.us-west-2.elasticbeanstalk.com/login/")!
+    let url = URL(string: "https://httpbin.org/post")!
     
-    var name:String!
-    var email:String!
-    var age:String!
-    var city:String!
-    var fbhandle:String!
+    var name:String?
+    var email:String?
+    var age:String?
+    var city:String?
+    var fbhandle:String?
     
     init() {
         print("initializing profile")
     }
     
     func toJson() -> [String: Any]? {
-        let json: [String: Any] = [
+        let json: [String: String?] = [
             "name": self.name,
             "email": self.email,
             "age": self.age,
@@ -31,105 +32,47 @@ class Profile {
             "fbhandle": self.fbhandle
         ]
         //let jsonData = try? JSONSerialization.data(withJSONObject: json)
-        return json
+        return json as [String: Any]
     }
     
-    func getJsonHandle() -> [String:  Any]? {
-        let json: [String: Any] = [
+    func fromJson(json: [String: Any]) {
+        self.name = json["name"] as? String
+        self.email = json["email"] as? String
+        self.age = json["age"] as? String
+        self.city = json["city"] as? String
+        self.fbhandle = json["fbhandle"] as? String
+    }
+    
+    func getJsonHandle() -> [String: Any]? {
+        let json: [String: String?] = [
             "fbhandle": self.fbhandle
         ]
-        return json
+        return json as [String: Any]
     }
     
-    func stringToJson(jsonText:String) -> [String: Any]? {
-        if let data = jsonText.data(using: .utf8) {
-            do {
-                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-        return nil
-    }
-    
-    func fromJson(jsonText:String) {
-        let jsonData = self.stringToJson(jsonText: jsonText)
-        /*
-        self.name = jsonData["name"]
-        self.email = jsonData["email"]
-        self.age = jsonData["age"]
-        self.fbhandle = jsonData["fbhandle"]
-        */
-        /*
-        var request = URLRequest(url: self.url)
-        request.httpMethod = "POST"
-        request.httpBody = jsonData
-
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                print(error?.localizedDescription ?? "No data")
-                return
-            }
-            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String: Any] {
-                print(responseJSON)
-            }
-        }
-        task.resume()
-        */
-    }
-
-    func cloud_delete() {
+    func cloudDelete() {
         let parameters = self.getJsonHandle()
-        AF.request(self.url, method: .delete, parameters: parameters, encoding: JSONEncoding.default)
+        AF.request(
+            self.url.absoluteString,
+            method: .delete,
+            parameters: parameters,
+            encoding: JSONEncoding.default
+        )
     }
     
-    func cloud_get(fbhandle:String) {
-        let parameters: [String: String] = [
-            "fbhandle": fbhandle
-        ]
-        //AF.request(self.url, method: .get, parameters: parameters, encoding: URLEncoding.httpBody)
-        AF.request(self.url, parameters: parameters, encoding: JSONEncoding.default)
-            .responseJSON { response in
-                debugPrint(response)
-                print("got response from server")
-                if let data = response.result.value{
-                    // Response type-1
-                    if  (data as? [[String : AnyObject]]) != nil{
-                        print("data_1: \(data)")
-                    }
-                    // Response type-2
-                    if  (data as? [String : AnyObject]) != nil{
-                        print("data_2: \(data)")
-                    }
-                }
-        }
-        //
-        
-        
-        
-        //let url:String = "https://httpbin.org/get"
-        let url:String = self.url.absoluteString
-        print(url)
-        AF.request(url, method: .get, parameters: parameters, encoding: URLEncoding.httpBody).responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
-            
+    func cloudGet(fbhandle:String) {
+        let parameters = ["fbhandle": fbhandle] as [String: Any]
+        AF.request(self.url.absoluteString, method: .get, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
             if let json = response.result.value {
-                print("JSON: \(json)") // serialized json response
-            }
-            
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string
+                let j = json as! [String: Any]
+                let p = j["json"] as! [String: Any]
+                self.fromJson(json: p)
             }
         }
     }
     
-    func cloud_insert() {
+    func cloudInsert() {
         let parameters = self.toJson()
-        AF.request(self.url, method: .post, parameters: parameters, encoding: URLEncoding.httpBody)
+        AF.request(self.url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
     }
-    
-    
 }

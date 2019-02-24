@@ -15,6 +15,8 @@ class SetGoalViewController: UIViewController {
     @IBOutlet weak var facebookPostInput: UITextView!
     @IBOutlet weak var nextButton: UIButton!
     
+    let userDefaults:UserDefaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         print("SetGoalViewController")
         super.viewDidLoad()
@@ -22,9 +24,11 @@ class SetGoalViewController: UIViewController {
     }
     
     @IBAction func onNextButtonTouched(_ sender: Any) {
+        userDefaults.set(value: true, forKey: "Test.StickFencing.wereGoalsSet")
+        
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let geofenceViewController = storyBoard.instantiateViewController(withIdentifier: "geofenceViewController") as! GeofenceViewController
-        self.present(geofenceViewController, animated: true, completion: nil)
+        let profileViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        self.present(profileViewController, animated: true, completion: nil)
     }
     
 }

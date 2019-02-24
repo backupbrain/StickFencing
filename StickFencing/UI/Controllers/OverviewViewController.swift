@@ -11,16 +11,20 @@ import UIKit
 class OverviewViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     
+    let userDefaults:UserDefaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         print("OverviewViewController")
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     @IBAction func onNextButtonTouched(_ sender: Any) {
+        userDefaults.set(value: true, forKey: "Test.StickFencing.wasIntroScreenSeen")
+        
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let setGoalViewController = storyBoard.instantiateViewController(withIdentifier: "setGoalViewController") as! SetGoalViewController
         self.present(setGoalViewController, animated: true, completion: nil)
+        
     }
     
 }
