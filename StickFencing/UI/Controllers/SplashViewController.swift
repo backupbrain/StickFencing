@@ -12,8 +12,8 @@ import FacebookLogin
 import CoreLocation
 
 class SplashViewController: UIViewController, CLLocationManagerDelegate {
-    @IBOutlet weak var facebookLoginButton: UIButton!
     @IBOutlet weak var jsonTestButton: UIButton!
+    @IBOutlet weak var facebookLoginButton: UIButton!
     
     let userDefaults:UserDefaults = UserDefaults.standard
     
@@ -21,17 +21,21 @@ class SplashViewController: UIViewController, CLLocationManagerDelegate {
         print("SplashViewController")
         super.viewDidLoad()
         
-        let locationManager = CLLocationManager()
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self;
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.requestAlwaysAuthorization()
-            locationManager.startUpdatingLocation()
-        }
         
         if let accessToken = AccessToken.current {
             print(accessToken)
             self.loadNextScreen()
+        }
+        
+        let locationManager = CLLocationManager()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self;
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            if (!locationManager.allowsBackgroundLocationUpdates) {
+                locationManager.requestAlwaysAuthorization()
+            } else {
+                locationManager.startUpdatingLocation()
+            }
         }
     }
     
@@ -51,7 +55,7 @@ class SplashViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
         
-    @IBAction func onFacebookLaginButtonTouched(_ sender: Any) {
+    @IBAction func onFacebookLoginButtonTouched(_ sender: Any) {
         let loginManager = LoginManager()
         loginManager.logIn(readPermissions: [ReadPermission.publicProfile], viewController : self) { loginResult in
             switch loginResult {
@@ -75,7 +79,7 @@ class SplashViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedAlways {
-            // you're good to go!
+            manager.startUpdatingLocation()
         }
     }
     

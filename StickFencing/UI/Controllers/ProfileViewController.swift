@@ -51,16 +51,6 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         print("ProfileViewController")
         super.viewDidLoad()
-    
-        
-        
-        let locationManager = CLLocationManager()
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self;
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.requestAlwaysAuthorization()
-            locationManager.startUpdatingLocation()
-        }
         
         if let accessToken = AccessToken.current {
             self.progress = Progress()
@@ -92,6 +82,17 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
         } else {
             self.loadSplashScreen()
         }
+        
+        let locationManager = CLLocationManager()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self;
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            if (!locationManager.allowsBackgroundLocationUpdates) {
+                locationManager.requestAlwaysAuthorization()
+            } else {
+                locationManager.startUpdatingLocation()
+            }
+        }
     }
     
     func loadSplashScreen() {
@@ -118,6 +119,7 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedAlways {
+            manager.startUpdatingLocation()
             // you're good to go!
         }
     }

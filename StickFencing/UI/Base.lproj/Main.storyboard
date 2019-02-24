@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Splash View Controller-->
+        <!--SplashViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SplashViewController" customModule="StickFencing" sceneMemberID="viewController">
+                <viewController restorationIdentifier="SplashViewController" storyboardIdentifier="SplashViewController" id="BYZ-38-t0r" userLabel="SplashViewController" customClass="SplashViewController" customModule="StickFencing" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nDV-qr-Mxn"/>
                         <viewControllerLayoutGuide type="bottom" id="EJf-85-qOY"/>
@@ -21,13 +21,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krZ-zP-bZn">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="facebookLoginButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krZ-zP-bZn" userLabel="facebookLoginButton">
                                 <rect key="frame" x="116" y="723" width="145" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <accessibility key="accessibilityConfiguration" identifier="facebookLoginButton"/>
                                 <state key="normal" title="Log in with Facebook"/>
                                 <connections>
-                                    <action selector="onFacebookLaginButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gWs-Md-KP2"/>
+                                    <action selector="onFacebookLoginButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3r0-8S-UFM"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhg-xf-3Hc">
@@ -35,9 +35,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <accessibility key="accessibilityConfiguration" identifier="facebookLoginButton"/>
                                 <state key="normal" title="Test JSON PUT"/>
-                                <connections>
-                                    <action selector="onJsonTestButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dbG-zP-6Ny"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="commit_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="7jj-0M-13x">
                                 <rect key="frame" x="61.574105621799617" y="74" width="196" height="198.00000000000003"/>
@@ -47,8 +44,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="facebookLoginButton" destination="krZ-zP-bZn" id="e4u-qL-hO6"/>
-                        <outlet property="jsonTestButton" destination="Lhg-xf-3Hc" id="NlA-J9-zSe"/>
+                        <outlet property="facebookLoginButton" destination="krZ-zP-bZn" id="LPP-83-taW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
