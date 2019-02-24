@@ -15,5 +15,5 @@ class Habit {
     var length:NSInteger!
     var fbhandle:String!
     var geoFenceId:String!
-
+    
 }

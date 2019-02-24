@@ -21,6 +21,7 @@
 		7A516DD72221D72200692FDA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A516DD62221D72200692FDA /* ProfileViewController.swift */; };
 		7A516DD92221EBCD00692FDA /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A516DD82221EBCD00692FDA /* Profile.swift */; };
 		7A516DE32221F65800692FDA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 7A516DE22221F65800692FDA /* Podfile */; };
+		7AB93C482222BD3600FCC878 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB93C472222BD3600FCC878 /* Habit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		7A516DD62221D72200692FDA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7A516DD82221EBCD00692FDA /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		7A516DE22221F65800692FDA /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		7AB93C472222BD3600FCC878 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				7A516DD82221EBCD00692FDA /* Profile.swift */,
+				7AB93C472222BD3600FCC878 /* Habit.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-StickFencing/Pods-StickFencing-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -243,6 +247,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -291,6 +296,7 @@
 				7A516DD32221D6C500692FDA /* GeofenceViewController.swift in Sources */,
 				7A14F2422221B7A90087DD42 /* StickFencing.xcdatamodeld in Sources */,
 				7A516DCF2221D60700692FDA /* OverviewViewController.swift in Sources */,
+				7AB93C482222BD3600FCC878 /* Habit.swift in Sources */,
 				7A516DD72221D72200692FDA /* ProfileViewController.swift in Sources */,
 				7A516DD92221EBCD00692FDA /* Profile.swift in Sources */,
 				7A14F23A2221B7A90087DD42 /* AppDelegate.swift in Sources */,

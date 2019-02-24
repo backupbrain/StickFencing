@@ -29,6 +29,13 @@ class Profile {
         return json
     }
     
+    func getJsonHandle() -> [String:  Any]? {
+        let json: [String: Any] = [
+            "fbhandle": self.fbhandle
+        ]
+        return json
+    }
+    
     func stringToJson(jsonText:String) -> [String: Any]? {
         if let data = jsonText.data(using: .utf8) {
             do {
@@ -67,7 +74,29 @@ class Profile {
         */
     }
 
-
+    func delete() {
+        let jsonData = getJsonHandle()
+        var request = UrlRequest(url: self.url)
+        request.httpMethod = "DELETE"
+        /*
+         var request = URLRequest(url: self.url)
+         request.httpMethod = "POST"
+         request.httpBody = jsonData
+         
+         let task = URLSession.shared.dataTask(with: request) { data, response, error in
+         guard let data = data, error == nil else {
+         print(error?.localizedDescription ?? "No data")
+         return
+         }
+         let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+         if let responseJSON = responseJSON as? [String: Any] {
+         print(responseJSON)
+         }
+         }
+         task.resume()
+         */
+    }
+    
     func saveToCloud() {
         //jsonData = self.toJson()
 

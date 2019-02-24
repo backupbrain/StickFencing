@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "64F9C6855276B673DADAB6DBAC1932C6"
-               BuildableName = "Pods-StickFencing.framework"
-               BlueprintName = "Pods-StickFencing"
+               BlueprintIdentifier = "628DA498255215479ECAD389BEADB5E8"
+               BuildableName = "Alamofire.framework"
+               BlueprintName = "Alamofire"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
