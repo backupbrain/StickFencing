@@ -23,7 +23,7 @@ class SetGoalViewController: UIViewController {
     
     @IBAction func onNextButtonTouched(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let geofenceViewController = storyBoard.instantiateViewController(withIdentifier: "geofenceViewController") as! NewViewController
+        let geofenceViewController = storyBoard.instantiateViewController(withIdentifier: "geofenceViewController") as! GeofenceViewController
         self.present(geofenceViewController, animated: true, completion: nil)
     }
     

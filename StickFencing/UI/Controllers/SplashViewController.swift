@@ -20,18 +20,27 @@ class SplashViewController: UIViewController {
 
     @IBAction func onFacebookLaginButtonTouched(_ sender: Any) {
         print("Facebook button")
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let overviewViewController = storyBoard.instantiateViewController(withIdentifier: "overviewViewController") as! NewViewController
-        self.present(overviewViewController, animated: true, completion: nil)
+        //let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        //let overviewViewController = storyBoard.instantiateViewController(withIdentifier: "overviewViewController") as! OverviewViewController
+        //self.present(overviewViewController, animated: true, completion: nil)
     }
     
     @IBAction func onJsonTestButtonTouched(_ sender: Any) {
+        /*
         let json: [String: Any] = [
             "title": "ABC",
             "dict": ["1":"First", "2":"Second"]
         ]
+        */
+        let json: [String: Any] = [
+            "name": "bhavya",
+            "email": "bhavya.6187@gmail.com",
+            "age": 28,
+            "city": "San Francisco",
+            "fbhandle": "bhavya61872"
+        ]
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
-        let url = URL(string: "http://httpbin.org/post")!
+        let url = URL(string: "http://stick.mizcmyrprw.us-west-2.elasticbeanstalk.com/login/")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.httpBody = jsonData

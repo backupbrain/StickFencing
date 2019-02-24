@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18D155A67C616D62EBB64578 /* Pods_StickFencing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6901E649B4D8B21BDA091B33 /* Pods_StickFencing.framework */; };
 		7A14F23A2221B7A90087DD42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A14F2392221B7A90087DD42 /* AppDelegate.swift */; };
 		7A14F23C2221B7A90087DD42 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A14F23B2221B7A90087DD42 /* SplashViewController.swift */; };
 		7A14F23F2221B7A90087DD42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A14F23D2221B7A90087DD42 /* Main.storyboard */; };
@@ -23,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		227B4E818DB70DD48E5DA89D /* Pods-StickFencing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickFencing.debug.xcconfig"; path = "Target Support Files/Pods-StickFencing/Pods-StickFencing.debug.xcconfig"; sourceTree = "<group>"; };
+		2C1CD16ABCC35792C78D89D1 /* Pods-StickFencing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickFencing.release.xcconfig"; path = "Target Support Files/Pods-StickFencing/Pods-StickFencing.release.xcconfig"; sourceTree = "<group>"; };
+		6901E649B4D8B21BDA091B33 /* Pods_StickFencing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StickFencing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A14F2362221B7A90087DD42 /* StickFencing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StickFencing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A14F2392221B7A90087DD42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A14F23B2221B7A90087DD42 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -45,18 +49,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D155A67C616D62EBB64578 /* Pods_StickFencing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		502875F4B99DC1ADA51AAE70 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				227B4E818DB70DD48E5DA89D /* Pods-StickFencing.debug.xcconfig */,
+				2C1CD16ABCC35792C78D89D1 /* Pods-StickFencing.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7A14F22D2221B7A90087DD42 = {
 			isa = PBXGroup;
 			children = (
 				7A516DE22221F65800692FDA /* Podfile */,
 				7A14F2382221B7A90087DD42 /* StickFencing */,
 				7A14F2372221B7A90087DD42 /* Products */,
+				502875F4B99DC1ADA51AAE70 /* Pods */,
+				8AD454252A32795F1E33094C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +144,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		8AD454252A32795F1E33094C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6901E649B4D8B21BDA091B33 /* Pods_StickFencing.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A14F24B2221B7AB0087DD42 /* Build configuration list for PBXNativeTarget "StickFencing" */;
 			buildPhases = (
+				7A2ABF1489BCD4EB5EE8B791 /* [CP] Check Pods Manifest.lock */,
 				7A14F2322221B7A90087DD42 /* Sources */,
 				7A14F2332221B7A90087DD42 /* Frameworks */,
 				7A14F2342221B7A90087DD42 /* Resources */,
+				07314EC5C962054A731DA0F5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,6 +220,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07314EC5C962054A731DA0F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StickFencing/Pods-StickFencing-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StickFencing/Pods-StickFencing-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A2ABF1489BCD4EB5EE8B791 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StickFencing-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7A14F2322221B7A90087DD42 /* Sources */ = {
@@ -352,6 +437,7 @@
 		};
 		7A14F24C2221B7AB0087DD42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 227B4E818DB70DD48E5DA89D /* Pods-StickFencing.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -366,7 +452,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = Test.StickFencing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -376,6 +462,7 @@
 		};
 		7A14F24D2221B7AB0087DD42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C1CD16ABCC35792C78D89D1 /* Pods-StickFencing.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -390,7 +477,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = Test.StickFencing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

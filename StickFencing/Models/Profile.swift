@@ -9,15 +9,15 @@
 import Foundation
 
 class Profile {
-    let url = URL(string: "http://httpbin.org/post")!
-
+    let url = URL(string: "http://stick.mizcmyrprw.us-west-2.elasticbeanstalk.com/login/")!
+    
     var name:String!
     var email:String!
     var age:String!
     var city:String!
     var fbhandle:String!
     
-    func toJson() -> [Data: Any] {
+    func toJson() -> [String: Any]? {
         let json: [String: Any] = [
             "name": self.name,
             "email": self.email,
@@ -25,11 +25,11 @@ class Profile {
             "city": self.city,
             "fbhandle": self.fbhandle
         ]
-        let jsonData = try? JSONSerialization.data(withJSONObject: json)
-        return jsonData
+        //let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        return json
     }
     
-    func stringToJson(jsonText:String) {
+    func stringToJson(jsonText:String) -> [String: Any]? {
         if let data = jsonText.data(using: .utf8) {
             do {
                 return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
@@ -42,6 +42,13 @@ class Profile {
     
     func fromJson(jsonText:String) {
         let jsonData = self.stringToJson(jsonText: jsonText)
+        /*
+        self.name = jsonData["name"]
+        self.email = jsonData["email"]
+        self.age = jsonData["age"]
+        self.fbhandle = jsonData["fbhandle"]
+        */
+        /*
         var request = URLRequest(url: self.url)
         request.httpMethod = "POST"
         request.httpBody = jsonData
@@ -57,11 +64,12 @@ class Profile {
             }
         }
         task.resume()
+        */
     }
 
 
     func saveToCloud() {
-        jsonData = self.toJson()
+        //jsonData = self.toJson()
 
     }
     

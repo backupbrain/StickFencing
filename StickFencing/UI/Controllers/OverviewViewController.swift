@@ -19,7 +19,7 @@ class OverviewViewController: UIViewController {
     
     @IBAction func onNextButtonTouched(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let setGoalViewController = storyBoard.instantiateViewController(withIdentifier: "setGoalViewController") as! NewViewController
+        let setGoalViewController = storyBoard.instantiateViewController(withIdentifier: "setGoalViewController") as! SetGoalViewController
         self.present(setGoalViewController, animated: true, completion: nil)
     }
     
