@@ -109,6 +109,11 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
         print("locations = \(locValue.latitude) \(locValue.longitude)")
         
         if let location = locations.last {
+            let activity = Activity()
+            activity.fbhandle = AccessToken.current?.authenticationToken
+            activity.lat = Float(location.coordinate.latitude)
+            activity.long = Float(location.coordinate.longitude)
+            activity.cloudInsert()
             print("New location is \(location)")
         }
     }

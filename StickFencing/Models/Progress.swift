@@ -10,8 +10,8 @@ import Foundation
 import Alamofire
 
 class Progress {
-    //let url = URL(string: "http://stick.mizcmyrprw.us-west-2.elasticbeanstalk.com/progress/")!
-    let url = URL(string: "https://httpbin.org/post")!
+    let url = URL(string: "http://stick.mizcmyrprw.us-west-2.elasticbeanstalk.com/progress/")!
+    //let url = URL(string: "https://httpbin.org/post")!
     
     var dates:[String]!
 

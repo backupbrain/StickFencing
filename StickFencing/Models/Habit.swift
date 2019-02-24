@@ -10,8 +10,8 @@ import Foundation
 import Alamofire
 
 class Habit {
-    //let url = URL(string: "http://stick.mizcmyrprw.us-west-2.elasticbeanstalk.com/habit/")!
-    let url = URL(string: "https://httpbin.org/post")!
+    let url = URL(string: "http://stick.mizcmyrprw.us-west-2.elasticbeanstalk.com/habit/")!
+    //let url = URL(string: "https://httpbin.org/post")!
     
     var frequency:NSInteger!
     var length:NSInteger!
