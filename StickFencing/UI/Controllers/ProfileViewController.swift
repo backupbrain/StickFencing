@@ -34,10 +34,19 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var numWeeksLabel: UILabel!
     @IBOutlet weak var changeGoalsButton: UIButton!
     @IBOutlet weak var logOutButton: UIButton!
+    @IBOutlet weak var gymNameLabel: UILabel!
+    @IBOutlet weak var messageTypeLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
     
     let userDefaults:UserDefaults = UserDefaults.standard
     var habit:Habit!
     var progress:Progress!
+    
+    let gymGeofenceNames = [
+        "Equinox": "48fc0182-bf28-40a3-9e4a-150e2d0dca2a",
+        "Mission Cliffs": "f554237d-599a-49b4-9f09-8a7e4b61ba34",
+        "24 Hour Fitness": "4bfa67da-f3bf-47f1-803b-4ca0a7c0c14b"
+    ]
     
     override func viewDidLoad() {
         print("ProfileViewController")
@@ -67,10 +76,19 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
             let messageType = userDefaults.string(forKey: "Test.StickFencing.messageType")
             let gymGeofenceId = userDefaults.string(forKey: "Test.StickFencing.geofenceId")
             
+            var gymName = "Gym name"
+            for (gn, gid) in self.gymGeofenceNames {
+                if gymGeofenceId == gid {
+                    gymName = gn
+                }
+            }
             
             
             self.numTimesPerWeekLabel.text = String(numGymVisits)
             self.numWeeksLabel.text = String(numWeekCommitment)
+            self.gymNameLabel.text = gymName
+            self.messageTypeLabel.text = messageType
+            self.messageLabel.text = textMessage
         } else {
             self.loadSplashScreen()
         }
