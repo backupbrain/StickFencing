@@ -63,7 +63,7 @@ class SplashViewController: UIViewController {
         let profile:Profile = Profile()
         profile.fbhandle = "bhavya6187" // AccessToken.current?.userId
         print("getting profile from cloud")
-        profile.cloud_get(fbhandle: "bhavya6187")
+        profile.cloudGet(fbhandle: "bhavya6187")
     }
     
 }

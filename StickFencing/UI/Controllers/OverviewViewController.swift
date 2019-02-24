@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FacebookCore
 
 class OverviewViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
@@ -16,16 +17,24 @@ class OverviewViewController: UIViewController {
     override func viewDidLoad() {
         print("OverviewViewController")
         super.viewDidLoad()
+        
+        if let accessToken = AccessToken.current {
+        } else {
+            self.loadSplashScreen()
+        }
     }
     
     @IBAction func onNextButtonTouched(_ sender: Any) {
-        userDefaults.set(value: true, forKey: "Test.StickFencing.wasIntroScreenSeen")
-        
+        userDefaults.set(true, forKey: "Test.StickFencing.wasIntroScreenSeen")
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let setGoalViewController = storyBoard.instantiateViewController(withIdentifier: "setGoalViewController") as! SetGoalViewController
         self.present(setGoalViewController, animated: true, completion: nil)
-        
     }
     
+    func loadSplashScreen() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let splashViewController = storyBoard.instantiateViewController(withIdentifier: "SplashViewController") as! SplashViewController
+        self.present(splashViewController, animated: true, completion: nil)
+    }
 }
 

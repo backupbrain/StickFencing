@@ -10,8 +10,8 @@ import Foundation
 import Alamofire
 
 class Profile {
-    //let url = URL(string: "http://stick.mizcmyrprw.us-west-2.elasticbeanstalk.com/login/")!
-    let url = URL(string: "https://httpbin.org/post")!
+    let url = URL(string: "http://stick.mizcmyrprw.us-west-2.elasticbeanstalk.com/login/")!
+    //let url = URL(string: "https://httpbin.org/post")!
     
     var name:String?
     var email:String?
@@ -62,6 +62,9 @@ class Profile {
     
     func cloudGet(fbhandle:String) {
         let parameters = ["fbhandle": fbhandle] as [String: Any]
+        let apiHandler = ApiHandler()
+        apiHandler.request(url: self.url.absoluteString, method: ApiHandler.get, parameters: parameters)
+        /*
         AF.request(self.url.absoluteString, method: .get, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
             if let json = response.result.value {
                 let j = json as! [String: Any]
@@ -69,6 +72,7 @@ class Profile {
                 self.fromJson(json: p)
             }
         }
+        */
     }
     
     func cloudInsert() {
