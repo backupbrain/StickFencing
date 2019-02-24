@@ -11,7 +11,7 @@ import FacebookCore
 import FacebookLogin
 import CoreLocation
 
-
+/*
 extension UIViewController {
     func hideKeyboard() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(
@@ -26,6 +26,7 @@ extension UIViewController {
         view.endEditing(true)
     }
 }
+ */
 
 
 class ProfileViewController: UIViewController, CLLocationManagerDelegate {
@@ -41,7 +42,15 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         print("ProfileViewController")
         super.viewDidLoad()
-        self.hideKeyboard()
+        
+        
+        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(ViewController.dismissKeyboard))
+        
+        self.view.addGestureRecognizer(tapRecognizer)
+        
+        
         
         let locationManager = CLLocationManager()
         if CLLocationManager.locationServicesEnabled() {
@@ -110,6 +119,5 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
             print("New location is \(location)")
         }
     }
-    
 }
 
